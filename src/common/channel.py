@@ -1,0 +1,35 @@
+from enum import IntEnum, auto
+
+
+class DataChannel(IntEnum):
+    PLAYER_1_UNITS_WORKER = 0
+    PLAYER_1_UNITS_TRIVIAL = auto()
+    PLAYER_1_UNITS_GROUND = auto()
+    PLAYER_1_UNITS_AIR = auto()
+    PLAYER_1_BUILDINGS = auto()
+    PLAYER_1_SPELLS = auto()
+
+    PLAYER_2_UNITS_WORKER = auto()
+    PLAYER_2_UNITS_TRIVIAL = auto()
+    PLAYER_2_UNITS_GROUND = auto()
+    PLAYER_2_UNITS_AIR = auto()
+    PLAYER_2_BUILDINGS = auto()
+    PLAYER_2_SPELLS = auto()
+
+    PLAYER_1_UNITS_WORKER_SPREAD = auto()
+    PLAYER_1_UNITS_TRIVIAL_SPREAD = auto()
+    PLAYER_1_UNITS_GROUND_SPREAD = auto()
+    PLAYER_1_UNITS_AIR_SPREAD = auto()
+    PLAYER_1_BUILDINGS_SPREAD = auto()
+    PLAYER_1_SPELLS_SPREAD = auto()
+
+    PLAYER_2_UNITS_WORKER_SPREAD = auto()
+    PLAYER_2_UNITS_TRIVIAL_SPREAD = auto()
+    PLAYER_2_UNITS_GROUND_SPREAD = auto()
+    PLAYER_2_UNITS_AIR_SPREAD = auto()
+    PLAYER_2_BUILDINGS_SPREAD = auto()
+    PLAYER_2_SPELLS_SPREAD = auto()
+
+    NEUTRAL_RESOURCE_FIELDS = auto()
+    NEUTRAL_VISION = auto()
+    NEUTRAL_TERRAIN = auto()

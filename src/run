@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -ex
+
+python3 -u 0_pre.py
+python3 -u 1_main_five_plus_n_data_window_size_add.py --training 36 212 --max-epoch 1
+mkdir -p ../results/models && mv ../results/*.pth ../results/models
+python3 -u 2_inference_five_n_plus_several_data_windowsize.py --testing 1725 --model-epoch 1
+
+mkdir -p ../results/vpds && mv ../results/*.vpd ../results/vpds
+mkdir -p ../results/vpds/rcnn_ROCI && mv ../results/vpds/*.vpd ../results/vpds/rcnn_ROCI
+python3 3_evaluation_final.py --replay-names 1725 --model-name rcnn_ROCI --human-names 6 7 8 9 10
+python3 3_evaluation_final.py --replay-names 1725 --model-name sscait --dir-path ../data/vpds/ --human-names 6 7 8 9 10
+python3 3_evaluation_final.py --replay-names 1725 --model-name aiide --dir-path ../data/vpds/ --human-names 6 7 8 9 10
+python3 3_evaluation_final.py --replay-names 1725 --dir-path ../data/vpds/ --human-names 6 7 8 9 10 --human-test
+
+
+
